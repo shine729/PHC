@@ -1,0 +1,11 @@
+#skip-nav{
+  width:100%; line-height:50px; text-align: center; position: fixed; left:0; top:-51px; transition:top 0.3s;
+  z-index:100000; background-color: #f04e23;}
+#skip-nav:focus{top:0;}
+#gnb h1 a{background: url(../img/logo.png) no-repeat; border:2px solid red; position: absolute;  width:60px; height:30px; top:50%; transform: translate(0,-50%);}
+#gnb ul>li>div{display:none;}
+#gnb ul>li{float:left; margin-right:62px;}
+#gnb{position: relative; border:2px solid red; height:50px;}
+#global{display:none;}
+.leftM{position:absolute; top:50%; transform: translate(0,-50%); right:0;}
+#mainnav{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); border:2px solid blue;}
