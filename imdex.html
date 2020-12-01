@@ -203,20 +203,20 @@
       <div class="container">
         <div class="circle_area">
           <div><img src="img/bg_circle.png"></div>
-          <div><img src="img/bg_circle.png"></div>
-          <div><img src="img/bg_circle.png"></div>
+          <div><img src="img/bg_circle2.png"></div>
+          <div><img src="img/bg_circle3.png"></div>
         </div>
         <div class="cont2_wrap">
           <h3>BUSINESS</h3>
           <ul class="cont2_box">
             <li><a href="#">자동차부품</a>
-              <div>
+              <div class="cont2_txt">
                 <p>Automotive parts</p>
                 <span>PHC는 도어무빙시스템, 파워트레인 분야의<br>글로벌 시장에서 입지를 공고히 하고 있습니다.<br>
                   PHC는 중요부품(Press, Casting, 사출, 마찰재)의<br>제조역량을 갖춤으로써 경쟁력을 확보하고 있습니다.</span>
                 <a href="#"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
               </div>
-              <div></div>
+              <div class="cont2_imgbox"><img src="img/cont2_01.png" alt="자동차부품"></div>
             </li>
             <li><a href="#">반도체 장비 부품</a>
               <div class="cont2_txt">
@@ -225,6 +225,7 @@
                 <br>글로벌 고객사에 다양한 부품과 서비스를 제공하고 있습니다.</span>
                 <a href="#"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
               </div>
+              <div class="cont2_imgbox"><img src="img/cont2_02.png" alt="반도체 장비 부품"></div>
             </li>
             <li><a href="#">엔지니어링 솔루션</a>
               <div class="cont2_txt">
@@ -233,6 +234,7 @@
                 <br>바탕으로 고객에게 신제품 개발을 위한 토탈 엔지니어링 솔루션을<br>제공하고 있습니다.</span>
                 <a href="#"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
               </div>
+              <div class="cont2_imgbox"><img src="img/cont2_03.png" alt="엔지니어링 솔루션"></div>
             </li>
             <li><a href="#">세정기 분야</a>
               <div class="cont2_txt">
@@ -241,6 +243,7 @@
                 <br>또한 세차기 분야에도 새롭게 진출하여 <br>더욱 다양한 서비스를 제공하고 있습니다.</span>
                 <a href="#"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
               </div>
+              <div class="cont2_imgbox"><img src="img/cont2_04.png" alt="세정기 분야"></div>
             </li>
           </ul>
         </div>
@@ -482,7 +485,7 @@
       $('#visual .container .indicator li').removeClass('on');
       $('#visual .container .indicator li:eq(' + (n - 1) + ')').addClass('on');
       slideNow = n;
-
+      
       slidePrev = (n <= 1) ? numSlide : n - 1;
       slideNext = (n >= numSlide) ? 1 : n + 1;
       if (isTimerOn === true) {
