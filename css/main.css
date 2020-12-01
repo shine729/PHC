@@ -22,7 +22,36 @@ br.only-m:after {content: '\00a0';}
 
 
 .blind{display:none;}
-#visual{clear: both;}
 li{list-style: none;}
 a{text-decoration: none;}
-.container{max-width:1300px; margin:0 auto;}
+img{width:100%;}
+
+#visual{clear: both;}
+.container{max-width:1300px; margin:0 auto; }
+#visual{position: relative; height:100vh;}
+.visual_box{position: absolute;  top:0; left:0; width:100%; height:100vh; border:5px solid violet; box-sizing: border-box;}
+#bg01{background: url("../img/visual01.jpg") no-repeat center/cover;}
+#bg02{background: url("../img/visual02.jpg") no-repeat center/cover;}
+#bg03{background: url("../img/visual03.jpg") no-repeat center/cover;}
+#bg04{background: url("../img/visual04.jpg") no-repeat center/cover;}
+#bg05{background: url("../img/visual05.jpg") no-repeat center/cover;}
+.visual_bg{width:100%; height:100%; box-sizing: border-box;}
+.container .indicator{position: absolute; bottom:0; left:50%; transform:translate(-50%,0); border:2px solid red; display: none;} 
+.container .indicator li{display:inline-block; border:2px solid blue; overflow: hidden;}
+.container .indicator li.on{width:20px; background-color: white;}
+.container .indicator li a{display:inline-block; width:10px; height:10px; border:2px solid white; border-radius: 20px;  text-indent: -999px;}
+.play {border:2px solid red; width:15px; height:20px; display:table; position: absolute; left:35px;} 
+.play img:first-child{display:none;}
+.play img:last-child{display: table-cell;}
+.play.on img:first-child{ display: table-cell;}
+.play.on img:last-child{display:none;}
+.control .prev,.control .next{border:2px solid red; display:table; width:25px; height:20px; position: absolute; }
+.control .prev img,.control .next img{display:table-cell;}
+.control .prev{left:0;}
+.control .next{left:60px;}
+.control{position: absolute; bottom:0; right:0; height:20px; top:70%; left:10%;}
+.visual_box h2{position: absolute; bottom:32%; left:10%; border: 3px solid blue; font-size: 50px; color:white; opacity: 0; transition: all 1s;
+    transition-delay: 0.5s;} 
+.visual_box h2 em{color: #f04e23;}
+.visual_box h2.on{opacity: 1;  bottom:35%; }
+.visual_box h2.on:last-child{}

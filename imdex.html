@@ -6,6 +6,8 @@
     <title>PHC</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/navigation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/main.js" charset="utf-8"></script>
 </head>
 <body>
     <hearder>
@@ -91,35 +93,39 @@
     <section id="visual">
       <div class="container">
         <div class="visual_box">
-          <div class="visual_bg"></div>
-          <div class="visual_content">    
-            <h2><em>파트너와 함께</em><br>새로운 가치를 창조합니다</h2>
-          </div>
+          <div id="bg01" class="visual_bg"></div>
+          <h2><em>파트너와 함께</em><br>새로운 가치를 창조합니다</h2>
         </div>
         <div class="visual_box">
-          <div class="visual_bg"></div>
-          <div class="visual_content">
-            <h2><em>새로운 가치와</em><br>행복을 추구합니다</h2>
-          </div>
+          <div id="bg02" class="visual_bg"></div>
+          <h2><em>새로운 가치</em>와<br>행복을 추구합니다</h2>
+        </div>
+        <div  class="visual_box">
+          <div id="bg03" class="visual_bg"></div>
+          <h2><em>환경의 소중함</em>을 인식하고<br>항상 환경을 먼저 생각합니다</h2>
         </div>
         <div class="visual_box">
-          <div class="visual_bg"></div>
-          <div class="visual_content">
-            <h2><em>환경의 소중함을 인식하고</em><br>항상 환경을 먼저 생각합니다</h2>
-          </div>
+          <div id="bg04" class="visual_bg"></div>
+          <h2><em>다양성을 존중</em>하고<br>창의적인 문화를 만들어 나갑니다</h2>
         </div>
         <div class="visual_box">
-          <div class="visual_bg"></div>
-          <div class="visual_content">
-            <h2><em>다양성을 존중하고</em><br>창의적인 문화를 만들어 나갑니다</h2>
-          </div>
+          <div id="bg05" class="visual_bg"></div>
+          <h2><em>모두가 행복</em>한<br>세상을 만들어 나갑니다</h2>
         </div>
-        <div class="visual_box">
-          <div class="visual_bg"></div>
-          <div class="visual_content">
-            <h2><em>모두가 행복한</em><br>세상을 만들어 나갑니다</h2>
-          </div>
-        </div>
+
+        <ul class="indicator">
+          <!-- <li><a href="#">1번 비주얼</a></li>
+          <li><a href="#">2번 비주얼</a></li>
+          <li><a href="#">3번 비주얼</a></li>
+          <li><a href="#">4번 비주얼</a></li> -->
+        </ul>
+
+        <p class="control">
+          <a href="#" class="prev"><img src="img/prev.png"></a>
+          <a href="#" class="next"><img src="img/next.png"></a>
+          <a href="#" class="play on"><img src="img/pause.png" alt="정지">
+          <img src="img/play.png" alt="시작"></a>
+        </p>
       </div>
     </section>
     <section id="cont1">
@@ -276,7 +282,7 @@
       </div> 
     </section>
     <section id="cont4">
-      <div class="cntainer">
+      <div class="container">
         <h3>GLOBAL NETWORK</h3>
         <ul>
           <li>
@@ -390,7 +396,7 @@
         </div>
       </div>
       <div class="footer_right">
-        <a href="javascript:f_open();">Family Site<img src="/web/images/select.png"></a>
+        <a href="#">Family Site<img src="img/select.png"></a>
       </div>
       <a href="#"><img src="img/top.png"><span>TOP</span></a>
       <div class="footer_bottom">  
@@ -415,14 +421,78 @@
         </div>
       </div>
     </footer>
-    <script>
 
-    $('#gnb > ul > li > a').on('mouseenter focus', function () {
-      $('#header').addClass('on');
+    <script>
+    'use strict';
+
+    var numSlide = $('div.visual_box .visual_bg').length;
+    var slideNow = 0;
+    var slidePrev = 0;
+    var slideNext = 0;
+    var firstSlide = 1;
+    var timerId = '';
+    var isTimerOn = true;
+    var timerSpeed = 3000;
+
+
+    $('div.visual_box .visual_bg').each(function(i) {
+      $('#visual .container .indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
     });
-    $('#header').on('mouseleave', function () {
-      $('#header').removeClass('on');
+
+
+    if (isTimerOn === true) {
+      $('#visual p.control a.play').addClass('on');
+    } else {
+      $('#visual p.control a.play').removeClass('on');
+    }
+
+    showSlide(firstSlide);
+
+    $('#visual .container .indicator li a').on('click', function() {
+      var index = $('#visual .container .indicator li').index($(this).parent());
+      showSlide(index + 1);
     });
+
+    $('#visual p.control a.prev').on('click', function() {
+      showSlide(slidePrev);
+    });
+
+    $('#visual p.control a.next').on('click', function() {
+      showSlide(slideNext);
+    });
+
+    $('#visual p.control a.play').on('click', function() {
+      if (isTimerOn === true) {
+        clearTimeout(timerId);
+        $(this).removeClass('on');
+        isTimerOn = false;
+      } else {
+        timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+        $(this).addClass('on');
+        isTimerOn = true;
+      }
+    });
+
+    function showSlide(n) {
+      clearTimeout(timerId);
+      $('div .visual_box .visual_bg').css({'display': 'none'});
+      $('div .visual_box .visual_bg:eq(' + (n - 1) + ')').css({'display': 'block'});
+      $('div .visual_box h2').removeClass('on');
+      $('div .visual_box h2:eq(' + (n - 1) + ')').addClass('on');
+      $('#visual .container .indicator li').removeClass('on');
+      $('#visual .container .indicator li:eq(' + (n - 1) + ')').addClass('on');
+      slideNow = n;
+
+      slidePrev = (n <= 1) ? numSlide : n - 1;
+      slideNext = (n >= numSlide) ? 1 : n + 1;
+      if (isTimerOn === true) {
+        timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
+      }
+    }
+
+
+
+
     </script>
 </body>
 </html>
