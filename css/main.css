@@ -20,6 +20,8 @@ i.fas span, i.far span, i.fab span {position: absolute; overflow: hidden; text-i
 br.only-m {content: '';}
 br.only-m:after {content: '\00a0';}
 
+
+
 /* common */
 .blind{display:none;}
 li{list-style: none;}
@@ -110,9 +112,9 @@ transform: translate(-50%,-50%); overflow: hidden; border:2px solid green; borde
 #cont3 .container > ul{width:960px; margin:0 auto;  padding-top: 75px; overflow: hidden;}
 #cont3 .container > ul > li:last-child{margin-right:0}
 #cont3 .container > ul > li > div > p{position: absolute; top:105px; left:50%; transform:translate(-50%,0); color: #f04e23; font-size: 16px;
-font-weight: bold; padding-bottom: 20px;}
+padding-bottom: 20px;}
 #cont3 .container > ul > li > div{position: relative;}
-.container{border:2px solid red;}
+.container{border:2px solid red;  height:100%;}
 .counter1{font-size: 45px; font-weight: bold;}
 
 
@@ -125,6 +127,12 @@ font-weight: bold; padding-bottom: 20px;}
 
 
 /* cont5 */
-#cont5{position: relative; height:861px;}
+#cont5{position: relative; height:861px; background-color: #f6f6f6; width:100%; box-sizing: border-box;}
 #cont5 h3{ text-align: center; padding-top:117px;}
-#cont5 p{text-align: center;}
+#cont5 > .container > p{text-align: center; padding-top: 18px; padding-bottom:46px;}
+#cont5 > .container{overflow: hidden;}
+#cont5_box div{ width:25%; margin-right:9%; float: left; box-sizing: border-box;}
+#cont5_box div:first-child{ margin-left:3.5%;}
+#cont5_box div:last-child{margin-right:3.5%;}
+#cont5_box div p{color: #f05023; font-size: 22px; padding-bottom:15px; padding-top:30px;}
+#cont5_box div img.hoverimg{display: block; width:30px; padding-top:30px; opacity:0;}
