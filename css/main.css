@@ -70,13 +70,16 @@ h3{font-size: 45px; }
 #cont1{position: relative; height: 914px;}
 #cont1 .container > h3{width:100%; text-align: center; }
 #cont1 .container > p{width:100%; text-align: center; }
-.cont1_left ul > li > p{font-size: 45px}
-.cont1_left li{position:absolute; width:450px; top:50%; transform: translate(0,-50%);}
+.cont1_left ul > li > p{font-size: 45px;}
+.cont1_left li{position:absolute; width:450px; top:50%; transform: translate(0,-50%); opacity: 0;}
+.cont1_left li.visible{ opacity: 1;}
 .cont1_center{position:absolute; left:50%; top:50%; width:532px; height:532px; background: url('../img/cont1_circle_2.png') no-repeat center/cover;
 transform: translate(-50%,-50%); overflow: hidden; border:2px solid green; border-radius: 50%;}
-.cont1_center ul li img{width:50%; position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); }
+/* .cont1_center ul li{opacity:0;} */
+.cont1_center ul li{width:50%; position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); opacity: 0;}
+.cont1_center ul li.visible{opacity:1}
 .cont1_right{float:right; padding-top:67px;}
-.cont1_right ul li{border-bottom: 1px solid #dadada; padding: 35px 0 35px 57px; color:grey;}
+.cont1_right ul li{border-bottom: 1px solid #dadada; padding: 35px 0 35px 57px; color:grey; }
 .cont1 .container{padding-top:100px;}
 
 
@@ -114,7 +117,7 @@ transform: translate(-50%,-50%); overflow: hidden; border:2px solid green; borde
 #cont3 .container > ul > li > div > p{position: absolute; top:105px; left:50%; transform:translate(-50%,0); color: #f04e23; font-size: 16px;
 padding-bottom: 20px;}
 #cont3 .container > ul > li > div{position: relative;}
-.container{border:2px solid red;  height:100%;}
+.container{ height:100%;}
 .counter1{font-size: 45px; font-weight: bold;}
 
 
@@ -136,3 +139,31 @@ padding-bottom: 20px;}
 #cont5_box div:last-child{margin-right:3.5%;}
 #cont5_box div p{color: #f05023; font-size: 22px; padding-bottom:15px; padding-top:30px;}
 #cont5_box div img.hoverimg{display: block; width:30px; padding-top:30px; opacity:0;}
+#cont5_box div:last-child .cont5_img {border-radius: 0 0 84px 0;}
+#cont5_box div .cont5_img:hover{border-radius: 50%; transition: all 300ms ease-in ;}
+
+
+/* footer */
+footer{background:#323232; color:grey; position: relative;}
+dl,dt,dd{display:inline-block;}
+.footer_left{width:870px; overflow: hidden;}
+.footer_left >ul > li{float:left; width:25%; line-height: 23px; }
+.footer_center >ul > li{line-height: 25px; }
+/* .footer_center{float: left;} */
+.footer_bottom{clear:both; overflow: hidden; padding-top:35px; padding-bottom: 45px; border-top: 1px solid rgba(255,255,255,0.2); 
+font-size: 13px; margin-top: 45px; width: 100%; display:inline-block} 
+.footer_right{width:197px; float: right;}
+footer .container .footer_left,footer .container .footer_center{float:left;}
+.f_left table dl dt{float:left}
+.f_left{float: left;}
+.f_left dl{margin-right:30px;}
+.f_right{ float:right; }
+footer .footer_left > ul > li p{font-size: 16px; color:white; margin-bottom: 10px;}
+.footer_clear{padding-top:50px;}
+.footer_left > ul > li> ul > li a{font-size: 14px;}
+.footer_center > ul > li> ul > li a{font-size: 14px;}
+.footer_right a img{width: 20px; height: 20px; margin-left:15px;}
+.footer_right a{border-bottom: 1px solid rgba(255,255,255,0.2); padding:5px 5px 10px 10px;}
+.footer_clear > a > img{width:35px; height:35px;}
+.footer_clear > a {float:right; margin-top:170px; margin-left:200px; }
+.footer_clear > a > span{display: block; margin-top:5px; font-size: 13px; text-align: center;} 
