@@ -67,11 +67,11 @@ h3{font-size: 45px; }
 
 
 /* cont1 */
-#cont1{position: relative; height: 914px;}
-#cont1 .container > h3{width:100%; text-align: center; }
+#cont1{position: relative; height: 914px; background: url("../img/cont1_bg.jpg") no-repeat center top;}
+#cont1 .container > h3{width:100%; text-align: center; margin-top:100px;}
 #cont1 .container > p{width:100%; text-align: center; }
-.cont1_left ul > li > p{font-size: 45px;}
-.cont1_left li{position:absolute; width:450px; top:50%; transform: translate(0,-50%); opacity: 0;}
+.cont1_left ul > li > p{font-size: 45px; margin-bottom:25px;}
+.cont1_left li{position:absolute; width:450px; top:50%; transform: translate(0,-50%); opacity: 0; line-height:25px;}
 .cont1_left li.visible{ opacity: 1;}
 .cont1_center{position:absolute; left:50%; top:50%; width:532px; height:532px; background: url('../img/cont1_circle_2.png') no-repeat center/cover;
 transform: translate(-50%,-50%); overflow: hidden; border:2px solid green; border-radius: 50%;}
@@ -79,8 +79,11 @@ transform: translate(-50%,-50%); overflow: hidden; border:2px solid green; borde
 .cont1_center ul li{width:50%; position:absolute; left:50%; top:50%; transform: translate(-50%,-50%); opacity: 0;}
 .cont1_center ul li.visible{opacity:1}
 .cont1_right{float:right; padding-top:67px;}
-.cont1_right ul li{border-bottom: 1px solid #dadada; padding: 35px 0 35px 57px; color:grey; }
+.cont1_right ul li{border-bottom: 1px solid #dadada; padding: 35px 0 35px 57px; color:grey; position: relative;}
+.cont1_right ul li.visible{color: black; font-weight: bold;}
 .cont1 .container{padding-top:100px;}
+.cont1_right ul li a em{position:absolute ; left:10px; font-size: 50px; top:28px;}
+
 
 
 
@@ -95,7 +98,6 @@ transform: translate(-50%,-50%); overflow: hidden; border:2px solid green; borde
 .cont2_box{padding-top:111px}
 .cont2_box li{  display: block;}
 .cont2_box li a.on:hover{color: #f04e23;}
-/* .cont2_txt{display:none;} */
 .cont2_box li div p{font-size: 45px; padding-bottom:36px}
 .cont2_box > li > a{position: absolute; top:290px; }
 .cont2_box > li:nth-child(1) > a{left:0;}
