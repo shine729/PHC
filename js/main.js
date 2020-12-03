@@ -31,9 +31,19 @@ $('div.cont1_right ul li a').on('click',function(){
     $('div.cont1_left ul li:eq('+index+')').addClass('visible');  
     $('div.cont1_center ul li').removeClass('visible');
     $('div.cont1_center ul li:eq('+index+')').addClass('visible'); 
-    $('div.cont1_right ul li').removeClass('visible');
-    $('div.cont1_right ul li:eq('+index+')').addClass('visible'); 
+    $('div.cont1_right ul li').removeClass('on');
+    $('div.cont1_right ul li:eq('+index+')').addClass('on'); 
+});
+
+
+
+
+$('ul.cont2_box li a').on('click',function(){
+    var index = $('ul.cont2_box li').index($(this).parent());
+    $('ul.cont2_box li').removeClass('on');
+    $('ul.cont2_box li:eq('+index+')').addClass('on'); 
+    $('div.cont2_txt').removeClass('on');
+    $('div.cont2_txt:eq('+index+')').addClass('on'); 
+    $('div.cont2_imgbox').removeClass('on');
+    $('div.cont2_imgbox:eq('+index+')').addClass('on'); 
 })
-
-
-
