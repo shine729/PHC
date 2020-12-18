@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHC</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/navigation.css">
+    <link href="css/main_pc.css" rel="stylesheet"  media="screen and (min-width : 1300px)" >
+    <link href="css/main_mobile.css" rel="stylesheet"  media="screen and (max-width : 1300px)" >
+    <link href="css/navigation.css" rel="stylesheet">
+    <link href="css/swiper.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
 </head>
 <body>
     <hearder>
@@ -15,10 +18,10 @@
           <div class="container">
             <h1><a href="#"><span class="blind">PHC</span></a></h1>
             <ul id="mainnav">
-              <li><a href="#">그룹소개</a>
-                <div class="introduce">
+              <li class="sub"><a href="#">그룹소개</a>
+                <div id="introduce" class="submenu clearfix">
                   <div class=left>
-                    <img src="">
+                    <img src="img/menu1.jpg" alt="">
                     <p>그룹소개</p>
                     <span>사람과 환경을 소중히 여기고,<br>새로운 가치를 함께 만들어 가는 <br>기업입니다.</span>
                   </div>
@@ -36,13 +39,13 @@
                   </div>
                 </div>
               </li>
-              <li>
+              <li class="sub">
                 <a href="#">CO-CREATION</a>
               </li>
-              <li><a href="#">사업분야</a>
-                <div class="Business Areas">
+              <li class="sub"><a href="#">사업분야</a>
+                <div id="business" class="submenu clearfix">
                   <div class="left">
-                    <img href="">
+                    <img src="img/menu3.jpg" alt="">
                     <p>사업분야</p>
                     <span>끊임없는 연구개발을 통해 생산된<br>PHC의 주요사업 분야를 소개합니다.</span>
                   </div>
@@ -58,9 +61,10 @@
                   </div>
                 </div>
               </li>
-              <li><a href="#">지속가능경영</a>
-              <div class="Operation">
+              <li class="sub"><a href="#">지속가능경영</a>
+              <div id ="operation" class="submenu clearfix">
                 <div class="left">
+                  <img src="img/menu4.jpg" alt="">
                   <p>지속가능경영</p>
                   <span>세상을 더욱 풍요롭게 하고<br>
                     지속가능한 내일을 만들기 위해<br>
@@ -76,40 +80,84 @@
               </div>
               </li>
             </ul>
-            <ul class="leftM">
-              <li class="global_wrap">
-              <a href="" class="global_btn"><img src="img/global.png" alit="all manu"></a>
-                <ul id="global">
-                  <li class="on">KOR</li>
-                  <li>ENG</li>
-                  <li>CHA</li>
-                </ul>
-              </li>
-            </ul>
+            <div  class="leftM">
+              <ul>
+                <li class="global_wrap pc">
+                <a href="" class="global_btn"><img src="img/global.png" alt="언어"></a>
+                  <ul id="global">
+                    <li class="on"><a href="#">KOR</a></li>
+                    <li><a href="#">ENG</a></li>
+                    <li><a href="#">CHA</a></li>
+                  </ul>
+                </li>
+                <li class="menu_btn mobile"><a href="#"><img src="img/all_menu.png" alt="메뉴버튼"></a></li>
+              </ul>
+            </div>
+            <div class="menu_bar">
+              <ul class="m_top clearfix">
+                <li class="on"><a href="#">KOR</a></li>
+                <li><a href="#">ENG</a></li>
+                <li><a href="#">CHA</a></li>
+              </ul>
+              <ul class="m_list">
+                <li><a href="#">그룹소개</a>
+                    <ul class="sub2">
+                      <li><a href="#">개요</a></li>
+                      <li><a href="#">Chairman’s Message</a></li>
+                      <li><a href="#">경영이념</a></li>
+                      <li><a href="#"><a href="#">역사</a></li>
+                      <li><a href="#">기업문화</a></li>
+                      <li><a href="#">글로벌 네트워크</a></li>
+                      <li><a href="#">CI</a></li>
+                      <li><a href="#">오시는 길</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">CO-CREATION</a></li>
+                <li><a href="#">사업장</a>
+                  <ul class="sub2">
+                    <li><a href="#">전체</a></li>
+                    <li><a href="#">자동차 부품</a></li>
+                    <li><a href="#">반도체 장비 부품</a></li>
+                    <li><a href="#">엔지니어링 솔루션</a></li>
+                    <li><a href="#">세정기 분야</a></li>
+                    <li><a href="#">주요 고객사</a></li>
+                    <li><a href="#">계열사</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">지속가능경영</a>
+                  <ul class="sub2">
+                    <li><a href="#">환경경영</a></li>
+                    <li><a href="#">사회공헌</a></li>
+                    <li><a href="#">윤리경영</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <a href="#" class="m_close"><img src="img/m_close.png" alt="닫기"></a>
+            </div>
           </div>
         </nav>
     </hearder>
     <section id="visual">
       <div class="container">
         <div class="visual_box">
-          <div id="bg01" class="visual_bg"></div>
-          <h2><em>파트너와 함께</em><br>새로운 가치를 창조합니다</h2>
+            <h2><em>파트너와 함께</em><br> 새로운 가치를 창조합니다</h2>
+            <div id="visual_bg1" class="visual_bg"></div>
         </div>
         <div class="visual_box">
-          <div id="bg02" class="visual_bg"></div>
-          <h2><em>새로운 가치</em>와<br>행복을 추구합니다</h2>
-        </div>
+          <h2><em>새로운 가치</em>와<br> 행복을 추구합니다</h2>
+          <div id="visual_bg2" class="visual_bg"></div>
+        </div >
         <div  class="visual_box">
-          <div id="bg03" class="visual_bg"></div>
-          <h2><em>환경의 소중함</em>을 인식하고<br>항상 환경을 먼저 생각합니다</h2>
+          <h2><em>환경의 소중함</em>을 인식하고 <br>항상 환경을 먼저 생각합니다</h2>
+          <div id="visual_bg3" class="visual_bg"></div>
         </div>
         <div class="visual_box">
-          <div id="bg04" class="visual_bg"></div>
-          <h2><em>다양성을 존중</em>하고<br>창의적인 문화를 만들어 나갑니다</h2>
+          <h2><em>다양성을 존중</em>하고<br> 창의적인 문화를 만들어 나갑니다</h2>
+          <div id="visual_bg4" class="visual_bg"></div>
         </div>
         <div class="visual_box">
-          <div id="bg05" class="visual_bg"></div>
-          <h2><em>모두가 행복</em>한<br>세상을 만들어 나갑니다</h2>
+          <h2><em>모두가 행복</em>한<br> 세상을 만들어 나갑니다</h2>
+          <div id="visual_bg5" class="visual_bg"></div>
         </div>
 
         <ul class="indicator">
@@ -120,8 +168,8 @@
         </ul>
 
         <p class="control">
-          <a href="#" class="prev"><img src="img/prev.png"></a>
-          <a href="#" class="next"><img src="img/next.png"></a>
+          <a href="#" class="prev"><img src="img/prev.png" alt="이전화살표"></a>
+          <a href="#" class="next"><img src="img/next.png" alt="다음화살표"></a>
           <a href="#" class="play on"><img src="img/pause.png" alt="정지">
           <img src="img/play.png" alt="시작"></a>
         </p>
@@ -135,64 +183,64 @@
           <ul>
             <li class="visible">
               <p>Partner</p>
-              <span>PHC는 Valeo(프랑스), Edscha(독일), E Systems<br>
-                Technology(미국), RPM(미국), Dongfeng(중국)등<br>
-                다양한 글로벌 합작파트너와 함께 합작회사를<br>
-                운영하고 있으며 지속적인 Co-Creation을 통해<br>
+              <span>PHC는 Valeo(프랑스), Edscha(독일), E Systems<br class="pc">
+                Technology(미국), RPM(미국), Dongfeng(중국)등<br class="pc">
+                다양한 글로벌 합작파트너와 함께 합작회사를<br class="pc">
+                운영하고 있으며 지속적인 Co-Creation을 통해<br class="pc">
                 시너지를 창출하고 있습니다.</span>
             </li>
             <li>
               <p>Customer</p>
-              <span>PHC는 고객의 니즈에서 새로운 목표를 발견합니다.<br>
-                고객과의 적극적인 소통으로 새로운 가치를 창조하는<br>
+              <span>PHC는 고객의 니즈에서 새로운 목표를 발견합니다.<br class="pc">
+                고객과의 적극적인 소통으로 새로운 가치를 창조하는<br class="pc">
                 글로벌 기업으로 성장해 나아가고 있습니다.</span>
             </li>
             <li>
               <p>Member</p>
-              <span>PHC는 건전하고 창의적인 기업문화를 바탕으로<br>
-                구성원들과 Co-Creation을 이뤄가고 있습니다.<br>
-                구성원들이 성장하는 것이 PHC 성장의<br>
+              <span>PHC는 건전하고 창의적인 기업문화를 바탕으로<br class="pc">
+                구성원들과 Co-Creation을 이뤄가고 있습니다.<br class="pc">
+                구성원들이 성장하는 것이 PHC 성장의<br class="pc">
                 가장 큰 원동력입니다.</span>
             </li>
             <li>
               <p>Supplier</p>
-              <span>PHC는 수많은 글로벌 협력사와의 적극적인 협력을<br>
-                통해 Co-Creation을 이뤄가고 있습니다.<br>
-                이를 통해 고객에게 새로운 가치를 제공함으로써<br>
+              <span>PHC는 수많은 글로벌 협력사와의 적극적인 협력을<br class="pc">
+                통해 Co-Creation을 이뤄가고 있습니다.<br class="pc">
+                이를 통해 고객에게 새로운 가치를 제공함으로써<br class="pc">
                 협력회사와 함께 성장해 나아가고 있습니다.</span>
             </li>
             <li>
               <p>Society</p>
-              <span>PHC는 모두가 행복한 세상을 위해 사회와의<br>
+              <span>PHC는 모두가 행복한 세상을 위해 사회와의<br class="pc">
                 Co-Creation을 더욱 강화해 나아갈 것입니다.</span>
             </li>
           </ul>
         </div>
         <div class="cont1_center">
           <ul>
-            <li class="visible"><img src="img/hand.png"></li>
-            <li><img src="img/like.png"></li>
-            <li><img src="img/group.png"></li>
-            <li><img src="img/develope.png"></li>
-            <li><img src="img/network.png"></li>
+            <li class="visible"><img src="img/hand.png" alt=""></li>
+            <li><img src="img/like.png" alt=""></li>
+            <li><img src="img/group.png" alt=""></li>
+            <li><img src="img/develope.png" alt=""></li>
+            <li><img src="img/network.png" alt=""></li>
           </ul>
         </div>
-        <div class="cont1_right">
+        <div class="cont1_right clearfix">
           <ul>
-            <li class="visible"><a href="#">
-              <em>1</em><p>Partner</p><span>시너지 창출 with Partner</span></a>
+            <li class="visible on"><a href="#">
+              <em>1</em><p>Partner</p><span class="pc">시너지 창출 with Partner</span></a>
             </li>
             <li><a href="#">
-              <em>2</em><p>Customer</p><span>새로운 가치 창조 with Customer</span></a>
+              <em>2</em><p>Customer</p><span class="pc">새로운 가치 창조 with Customer</span></a>
             </li>
             <li><a href="#">
-              <em>3</em><p>Member</p><span>건전한 기업문화 구축 with Member</span></a>
+              <em>3</em><p>Member</p><span class="pc">건전한 기업문화 구축 with Member</span></a>
             </li>
             <li><a href="#">
-              <em>4</em><p>Supplier</p><span>함께 성장하는 미래 with Supplier</span></a>
+              <em>4</em><p>Supplier</p><span class="pc">함께 성장하는 미래 with Supplier</span></a>
             </li>
             <li><a href="#">
-              <em>5</em><p>Society</p><span>기업의 사회적 책임 완수 with Society</span></a>
+              <em>5</em><p>Society</p><span class="pc">기업의 사회적 책임 완수 with Society</span></a>
             </li>
           </ul>
         </div>
@@ -201,9 +249,9 @@
     <section id="cont2">
       <div class="container">
         <div class="circle_area">
-          <div><img src="img/bg_circle.png"></div>
-          <div><img src="img/bg_circle2.png"></div>
-          <div><img src="img/bg_circle3.png"></div>
+          <div><img src="img/bg_circle.png" alt=""></div>
+          <div><img src="img/bg_circle2.png" alt=""></div>
+          <div><img src="img/bg_circle3.png" alt=""></div>
         </div>
         <div class="cont2_wrap">
           <h3>BUSINESS</h3>
@@ -211,18 +259,18 @@
             <li class="on"><a href="#">자동차부품</a>
               <div class="cont2_txt on">
                 <p>Automotive parts</p>
-                <span>PHC는 도어무빙시스템, 파워트레인 분야의<br>글로벌 시장에서 입지를 공고히 하고 있습니다.<br>
+                <span>PHC는 도어무빙시스템, 파워트레인 분야의<br class="pc">글로벌 시장에서 입지를 공고히 하고 있습니다.<br class="pc">
                   PHC는 중요부품(Press, Casting, 사출, 마찰재)의<br>제조역량을 갖춤으로써 경쟁력을 확보하고 있습니다.</span>
-                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
+                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png" alt=""></span></a>
               </div>
               <div class="cont2_imgbox on"><img src="img/cont2_01.png" alt="자동차부품"></div>
             </li>
             <li><a href="#">반도체 장비 부품</a>
               <div class="cont2_txt">
-                <p>Semiconductor <br>Equipment Parts</p>
-                <span>PHC는 반도체 장비에 필요한<br> 정밀가공, 정밀세정, 정밀도금 분야의 우수한 기술력을 보유하고 있으며
-                <br>글로벌 고객사에 다양한 부품과 서비스를 제공하고 있습니다.</span>
-                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
+                <p>Semiconductor <br class="pc">Equipment Parts</p>
+                <span>PHC는 반도체 장비에 필요한<br class="pc"> 정밀가공, 정밀세정3, 정밀도금 분야의 우수한 기술력을 보유하고 있으며
+                <br class="pc">글로벌 고객사에 다양한 부품과 서비스를 제공하고 있습니다.</span>
+                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png" alt=""></span></a>
               </div>
               <div class="cont2_imgbox"><img src="img/cont2_02.png" alt="반도체 장비 부품"></div>
             </li>
@@ -230,17 +278,17 @@
               <div class="cont2_txt">
                 <p>Engineering Solution</p>
                 <span>PHC는 미국 실리콘밸리에 BriteLab을 설립하여 우수한 기술력을
-                <br>바탕으로 고객에게 신제품 개발을 위한 토탈 엔지니어링 솔루션을<br>제공하고 있습니다.</span>
-                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
+                <br>바탕으로 고객에게 신제품 개발을 위한 토탈 엔지니어링 솔루션을<br class="pc">제공하고 있습니다.</span>
+                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png" alt=""></span></a>
               </div>
               <div class="cont2_imgbox"><img src="img/cont2_03.png" alt="엔지니어링 솔루션"></div>
             </li>
             <li><a href="#">세정기 분야</a>
               <div class="cont2_txt">
                 <p>Cleaning Machine</p>
-                <span>PHC는 세정기 분야에서 독자적인 설계능력을 보유하여 고객에게 <br>최적화된 제품과 서비스를 제공하고 있습니다.
-                <br>또한 세차기 분야에도 새롭게 진출하여 <br>더욱 다양한 서비스를 제공하고 있습니다.</span>
-                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
+                <span>PHC는 세정기 분야에서 독자적인 설계능력을 보유하여 고객에게 <br class="pc">최적화된 제품과 서비스를 제공하고 있습니다.
+                <br class="pc">또한 세차기 분야에도 새롭게 진출하여 <br class="pc">더욱 다양한 서비스를 제공하고 있습니다.</span>
+                <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png" alt=""></span></a>
               </div>
               <div class="cont2_imgbox"><img src="img/cont2_04.png" alt="세정기 분야"></div>
             </li>
@@ -251,31 +299,31 @@
     <section id="cont3">
       <div class="container">
         <h3>INNOVATION AND CHALLENGE</h3>
-        <ul>
+        <ul class="clearfix">
           <li> 
             <div>
-							<img src="img/cont3_ico1.png">
+							<img src="img/cont3_ico1.png" alt="">
 							<p>매출액</p>
 						</div>
 						<span><em class="counter1">3.4</em>조</span>
           </li>
           <li>
             <div>
-							<img src="img/cont3_ico2.png">
+							<img src="img/cont3_ico2.png" alt="">
 							<p>임직원수</p>
 						</div>
-						<span><em class="counter1">11,000</em>명</span>
+						<span><em class="counter1">785</em>명</span>
           </li>
           <li>
             <div>
-							<img src="img/cont3_ico3.png">
+							<img src="img/cont3_ico3.png" alt="">
 							<p>사업장</p>
 						</div>
 						<span><em class="counter1">38</em>개</span>
           </li>
           <li>
             <div>
-							<img src="img/cont3_ico4.png">
+							<img src="img/cont3_ico4.png" alt="">
 							<p>연구소</p>
 						</div>
 						<span><em class="counter1">12</em>개</span>
@@ -301,40 +349,52 @@
           </li> 
         </ul>
         <div><img class="map" src="img/map3.png"></div>
-        <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png"></span></a>
+        <a href="#" class="more"><span>LEARN MORE<img src="img/more_arrow.png" alt=""></span></a>
       </div>
     </section>
     <section id="cont5">
       <div class="container">
         <h3>SUSTAINABILITY</h3>
         <p>신뢰를 기반으로 사회와 더불어 지속가능한 성장을 추구합니다.</p>
-          <div id="cont5_box">
-            <div>
-              <img class="cont5_img" src="img/c2_1.png" alt="환경경영">
-              <p>환경경영</p>
-              <span>환경의 소중한 가치를 깊이 인식하여 지속 가능한 발전을 추구합니다.
-              <br>지구환경보존을 위한 친환경 기술과 제품 개발에 최선의 노력을 다하고 있습니다.</span>
-              <img src="img/hover.png" class="hoverimg">
-            </div>
-    
-            <div>
-              <img class="cont5_img" src="img/c2_02.jpg" alt="사회공헌">
-              <p>사회공헌</p>
-              <span>모두가 행복한 세상을 만들기 위해서 
-                노력하고 있습니다. 평화큰나무복지재단을 
-                통한 체계적인 사회공헌활동으로 나눔의
-                가치를 실현하고 있습니다. </span>
-              <img src="img/hover.png" class="hoverimg" alt="화살표">
-            </div>
-    
-            <div>
-              <img class="cont5_img" src="img/c2_03.jpg" alt="윤리경영">
-              <p>윤리경영</p>
-              <span>건전한 기업문화를 바탕으로 하는 윤리규정을 제정하여 PHC의 모든 구성원이 엄격히 준수하고 있습니다.</span>
-              <img src="img/hover.png" class="hoverimg" alt="화살표">
+          <div class = "swiper-container3">
+            <div class="cont5_box swiper-wrapper">
+              <div class="swiper-slide cont5_leftbox">
+                <div class="cont5_img">
+                  <img src="img/c2_1.png" alt="환경경영">
+                </div>
+                <div class="cont5_txt">  
+                  <p>환경경영</p>
+                  <span>환경의 소중한 가치를 깊이 인식하여 지속 가능한 발전을 추구합니다.<br>
+                  지구환경보존을 위한 친환경 기술과 제품 개발에 최선의 노력을 다하고 있습니다.</span>
+                  <img src="img/hover.png" class="hoverimg" alt="">
+                </div>
+              </div>
+              <div class="swiper-slide cont5_leftbox">
+                <div class="cont5_img">
+                  <img src="img/c2_02.jpg" alt="사회공헌">
+                </div>
+                <div class="cont5_txt">
+                  <p>사회공헌</p>
+                  <span>모두가 행복한 세상을 만들기 위해서 
+                    노력하고 있습니다. 평화큰나무복지재단을 
+                    통한 체계적인 사회공헌활동으로 나눔의
+                    가치를 실현하고 있습니다. </span>
+                  <img src="img/hover.png" class="hoverimg" alt="화살표">
+                </div>
+              </div>
+              <div class="swiper-slide cont5_leftbox">
+                <div class="cont5_img">
+                  <img src="img/c2_03.jpg" alt="윤리경영">
+                </div>
+                <div class="cont5_txt">
+                  <p>윤리경영</p>
+                  <span>건전한 기업문화를 바탕으로 하는 윤리규정을 제정하여 PHC의 모든 구성원이 엄격히 준수하고 있습니다.</span>
+                  <img src="img/hover.png" class="hoverimg" alt="화살표">
+                </div>
+              </div>
             </div>
           </div>
-      </div>
+      </div>  
     </section> 
     <footer>
       <div class="container">
@@ -393,19 +453,16 @@
             </ul>
           </div>
           <div class="footer_center">
-            <ul>
-              <li>개인정보 처리방침
-                  <ul>
-                    <li><a href="#">이메일무단수집거부</a></li>
-                    <li><a href="#">윤리경영</a></li>
-                  </ul>
-              </li>
+            <ul class="clearfix">
+              <li><a href="#">개인정보 처리방침</a></li>
+              <li><a href="#">이메일무단수집거부</a></li>
+              <li><a href="#">윤리경영</a></li>
             </ul>
           </div>
           <div class="footer_right">
-            <a href="#">Family Site<img src="img/select.png"></a>
+            <a href="#">Family Site<img src="img/select.png" alt=""></a>
           </div>
-          <a href="#"><img class="arrow_up" src="img/top.png"><span>TOP</span></a>
+          <a href="#"><img class="arrow_up" src="img/top.png" alt="위쪽 화살표"><span>TOP</span></a>
           <div class="footer_bottom">  
             <div class="f_left">
               <table>
@@ -429,79 +486,8 @@
         </div>
       </div>
     </footer>
-
-    <script>
-    'use strict';
-
-    var numSlide = $('div.visual_box .visual_bg').length;
-    var slideNow = 0;
-    var slidePrev = 0;
-    var slideNext = 0;
-    var firstSlide = 1;
-    var timerId = '';
-    var isTimerOn = true;
-    var timerSpeed = 3000;
-
-
-    $('div.visual_box .visual_bg').each(function(i) {
-      $('#visual .container .indicator').append('<li><a href="#">' + (i + 1) + '번 슬라이드</a></li>\n');
-    });
-
-
-    if (isTimerOn === true) {
-      $('#visual p.control a.play').addClass('on');
-    } else {
-      $('#visual p.control a.play').removeClass('on');
-    }
-
-    showSlide(firstSlide);
-
-    $('#visual .container .indicator li a').on('click', function() {
-      var index = $('#visual .container .indicator li').index($(this).parent());
-      showSlide(index + 1);
-    });
-
-    $('#visual p.control a.prev').on('click', function() {
-      showSlide(slidePrev);
-    });
-
-    $('#visual p.control a.next').on('click', function() {
-      showSlide(slideNext);
-    });
-
-    $('#visual p.control a.play').on('click', function() {
-      if (isTimerOn === true) {
-        clearTimeout(timerId);
-        $(this).removeClass('on');
-        isTimerOn = false;
-      } else {
-        timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-        $(this).addClass('on');
-        isTimerOn = true;
-      }
-    });
-
-    function showSlide(n) {
-      clearTimeout(timerId);
-      $('div .visual_box .visual_bg').css({'display': 'none'});
-      $('div .visual_box .visual_bg:eq(' + (n - 1) + ')').css({'display': 'block'});
-      $('div .visual_box h2').removeClass('on');
-      $('div .visual_box h2:eq(' + (n - 1) + ')').addClass('on');
-      $('#visual .container .indicator li').removeClass('on');
-      $('#visual .container .indicator li:eq(' + (n - 1) + ')').addClass('on');
-      slideNow = n;
-      
-      slidePrev = (n <= 1) ? numSlide : n - 1;
-      slideNext = (n >= numSlide) ? 1 : n + 1;
-      if (isTimerOn === true) {
-        timerId = setTimeout(function() {showSlide(slideNext);}, timerSpeed);
-      }
-    }
-
-
-
-
-    </script>
     <script src="js/main.js" charset="utf-8"></script>
+    <script>
+    </script>
 </body>
 </html>
