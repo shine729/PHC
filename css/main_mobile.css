@@ -44,7 +44,7 @@ button{border: none;}
 .container .indicator li{display:inline-block; border:2px solid blue; overflow: hidden;}
 .container .indicator li.on{width:20px; background-color: white;}
 .container .indicator li a{display:inline-block; width:10px; height:10px; border:2px solid white; border-radius: 20px;  text-indent: -999px;}
-.play { width:15px; height:20px; display:table; position: absolute; left:35px;} 
+.play { width:15px; height:20px;  position: absolute; left:35px;} 
 .play img:first-child{display:none;}
 .play img:last-child{display: table-cell;}
 .play.on img:first-child{ display: table-cell;}

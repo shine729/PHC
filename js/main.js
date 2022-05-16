@@ -11,19 +11,8 @@ function preventDefaultAnchor() {
 };
 
 
-// 버튼누르면 맨 위로 스크롤
-const arrowUp = document.querySelector('.arrow_up')
-arrowUp.addEventListener('click',() => {
-    scrollIntoView('#visual')
-});
 
-function scrollIntoView(selector){
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior:"smooth"});
-}
-
-
-// #cont1 버튼 누르면 element요소가 나타남 
+// #cont1 버튼 누르면 선택요소가 나타남 
 $('div.cont1_right ul li a').on('click',function(){
     var index = $('div.cont1_right ul li').index($(this).parent());
     // alert(index);
@@ -35,9 +24,6 @@ $('div.cont1_right ul li a').on('click',function(){
     $('div.cont1_right ul li:eq('+index+')').addClass('on'); 
 });
 
-
-
-// #cont2 버튼 누르면 element요소가 나타남 
 $('ul.cont2_box li a').on('click',function(){
     var index = $('ul.cont2_box li').index($(this).parent());
     $('ul.cont2_box li').removeClass('on');
@@ -48,6 +34,10 @@ $('ul.cont2_box li a').on('click',function(){
     $('div.cont2_imgbox:eq('+index+')').addClass('on'); 
 })
 
+$('.arrow_up').on('click',function(){
+  $('html,body').animate({scrollTop:0},400);
+  return false;
+})
 
 // 자동슬라이드
 var numSlide = $('#visual .visual_box').length;
@@ -106,8 +96,8 @@ function showSlide(n) {
   $('#visual h2:eq(' + (n - 1) + ')').addClass('on');
   $('#visual .container .indicator li').removeClass('on');
   $('#visual .container .indicator li:eq(' + (n - 1) + ')').addClass('on');
+
   slideNow = n;
-  
   slidePrev = (n <= 1) ? numSlide : n - 1;
   slideNext = (n >= numSlide) ? 1 : n + 1;
   if (isTimerOn === true) {
@@ -143,13 +133,26 @@ $(document).ready(function () {
     }
   });
 
-  $(".menu_bar .m_list > li").mouseover(function(){
-    $(this).find(".sub2").stop().slideDown()
+  window.onresize = function () {
+    if ($(window).width() > 1300) {
+      $(".menu_bar").css("display", "none");
+    } 
+  };
+
+
+  
+  $(".menu_bar .m_list > li > .has").click(function(){
+    var submenu = $(this).next(".sub2");
+    if(submenu.is(":visible")){
+      submenu.slideUp();
+      $(this).css({"background-image":"url(img/plus.png)"})
+    }else{
+      submenu.slideDown();
+      $(this).css({"background-image":"url(img/minus.png)"})
+    }
   })
 
-  $(".menu_bar .m_list > li").mouseout(function(){
-    $(this).find(".sub2").stop().slideUp()
-  })
+
 
 
   var swiper = new Swiper('.swiper-container3', {
